@@ -21,7 +21,8 @@ def init_connection():
 def run_query(query):
     with conn.cursor() as cur:
         cur.execute(query)
-        return cur.fetchall()
+        return cur.fetch_pandas_all()
+        #return cur.fetchall()
  
  
 # rows = run_query("SHOW TABLES;")
